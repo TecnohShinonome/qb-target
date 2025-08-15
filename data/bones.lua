@@ -42,93 +42,93 @@ if Config.EnableDefaultOptions then
         [`tyrant`] = true
     }
 
-    local function ToggleDoor(vehicle, door)
-        if GetVehicleDoorLockStatus(vehicle) < 2 then
-            if GetVehicleDoorAngleRatio(vehicle, door) > 0.0 then
-                SetVehicleDoorShut(vehicle, door, false)
-            else
-                SetVehicleDoorOpen(vehicle, door, false)
-            end
-        end
-    end
+    --local function ToggleDoor(vehicle, door)
+    --    if GetVehicleDoorLockStatus(vehicle) < 2 then
+    --        if GetVehicleDoorAngleRatio(vehicle, door) > 0.0 then
+    --            SetVehicleDoorShut(vehicle, door, false)
+    --        else
+    --            SetVehicleDoorOpen(vehicle, door, false)
+    --        end
+    --   end
+    --end
 
-    Bones.Options['seat_dside_f'] = {
-        ['Toggle Front Door'] = {
-            icon = 'fas fa-door-open',
-            label = 'Toggle Front Door',
-            canInteract = function(entity)
-                return GetEntityBoneIndexByName(entity, 'door_dside_f') ~= -1
-            end,
-            action = function(entity)
-                ToggleDoor(entity, 0)
-            end,
-            distance = 1.2
-        },
-    }
+    --Bones.Options['seat_dside_f'] = {
+    --    ['Toggle Front Door'] = {
+    --        icon = 'fas fa-door-open',
+    --        label = 'Toggle Front Door',
+    --        canInteract = function(entity)
+    --           return GetEntityBoneIndexByName(entity, 'door_dside_f') ~= -1
+    --        end,
+    --        action = function(entity)
+    --            ToggleDoor(entity, 0)
+    --        end,
+    --        distance = 1.2
+    --    },
+    --a}
 
-    Bones.Options['seat_pside_f'] = {
-        ['Toggle Front Door'] = {
-            icon = 'fas fa-door-open',
-            label = 'Toggle Front Door',
-            canInteract = function(entity)
-                return GetEntityBoneIndexByName(entity, 'door_pside_f') ~= -1
-            end,
-            action = function(entity)
-                ToggleDoor(entity, 1)
-            end,
-            distance = 1.2
-        }
-    }
+    --Bones.Options['seat_pside_f'] = {
+    --    ['Toggle Front Door'] = {
+    --        icon = 'fas fa-door-open',
+    --        label = 'Toggle Front Door',
+    --        canInteract = function(entity)
+    --            return GetEntityBoneIndexByName(entity, 'door_pside_f') ~= -1
+    --        end,
+    --        action = function(entity)
+    --            ToggleDoor(entity, 1)
+    --        end,
+    --        distance = 1.2
+    --    }
+    --}
 
-    Bones.Options['seat_dside_r'] = {
-        ['Toggle Rear Door'] = {
-            icon = 'fas fa-door-open',
-            label = 'Toggle Rear Door',
-            canInteract = function(entity)
-                return GetEntityBoneIndexByName(entity, 'door_dside_r') ~= -1
-            end,
-            action = function(entity)
-                ToggleDoor(entity, 2)
-            end,
-            distance = 1.2
-        }
-    }
+    --Bones.Options['seat_dside_r'] = {
+    --    ['Toggle Rear Door'] = {
+    --        icon = 'fas fa-door-open',
+    --        label = 'Toggle Rear Door',
+    --        canInteract = function(entity)
+    --            return GetEntityBoneIndexByName(entity, 'door_dside_r') ~= -1
+    --        end,
+    --        action = function(entity)
+    --            ToggleDoor(entity, 2)
+    --        end,
+    --        distance = 1.2
+    --    }
+    --}
 
-    Bones.Options['seat_pside_r'] = {
-        ['Toggle Rear Door'] = {
-            icon = 'fas fa-door-open',
-            label = 'Toggle Rear Door',
-            canInteract = function(entity)
-                return GetEntityBoneIndexByName(entity, 'door_pside_r') ~= -1
-            end,
-            action = function(entity)
-                ToggleDoor(entity, 3)
-            end,
-            distance = 1.2
-        }
-    }
+    --Bones.Options['seat_pside_r'] = {
+    --    ['Toggle Rear Door'] = {
+    --        icon = 'fas fa-door-open',
+    --        label = 'Toggle Rear Door',
+    --        canInteract = function(entity)
+    --            return GetEntityBoneIndexByName(entity, 'door_pside_r') ~= -1
+    --        end,
+    --        action = function(entity)
+    --            ToggleDoor(entity, 3)
+    --       end,
+    --        distance = 1.2
+    --    }
+    --}
 
-    Bones.Options['bonnet'] = {
-        ['Toggle Hood'] = {
-            icon = 'fa-duotone fa-engine',
-            label = 'Toggle Hood',
-            action = function(entity)
-                ToggleDoor(entity, BackEngineVehicles[GetEntityModel(entity)] and 5 or 4)
-            end,
-            distance = 0.9
-        }
-    }
+    --Bones.Options['bonnet'] = {
+    --    ['Toggle Hood'] = {
+    --        icon = 'fa-duotone fa-engine',
+    --aw        label = 'Toggle Hood',
+    --        action = function(entity)
+    --            ToggleDoor(entity, BackEngineVehicles[GetEntityModel(entity)] and 5 or 4)
+    --        end,
+    --        distance = 0.9
+    --    }
+    --}
 
-    Bones.Options['boot'] = {
-        ['Toggle Trunk'] = {
-            icon = 'fas fa-truck-ramp-box',
-            label = 'Toggle Trunk',
-            action = function(entity)
-                ToggleDoor(entity, BackEngineVehicles[GetEntityModel(entity)] and 4 or 5)
-            end,
-            distance = 0.9
-        }
-    }
+    --Bones.Options['boot'] = {
+    --    ['Toggle Trunk'] = {
+    --        icon = 'fas fa-truck-ramp-box',
+    --        label = 'Toggle Trunk',
+    --        action = function(entity)
+    --            ToggleDoor(entity, BackEngineVehicles[GetEntityModel(entity)] and 4 or 5)
+    --        end,
+    --        distance = 0.9
+    --    }
+    --}
 end
 
 return Bones
